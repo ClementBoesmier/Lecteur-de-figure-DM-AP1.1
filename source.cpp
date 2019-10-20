@@ -6,8 +6,6 @@
 
 
 
-
-
 int main()
 {
   std::cout << "Hello Word !!!" << '\n';
