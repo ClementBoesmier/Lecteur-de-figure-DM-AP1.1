@@ -2,8 +2,23 @@
 #include <fstream>
 #include <string>
 
+void dessinerCarre()
+{
 
+}
 
+int decoderForme(std::string uneForme)
+{
+  std::string lesFormePossible[5]={"carre","triangle rectangle","triangle rectangle inverse","triangle","losange"};
+  for (size_t leI = 0; leI < 5; leI++)
+  {
+    if (uneForme == lesFormePossible[leI])
+    {
+      return leI;
+    }
+  }
+  return -1;
+}
 
 
 void lireFichier()
@@ -26,8 +41,7 @@ void lireFichier()
 
     getline(monFichier, leRemplissage);
 
-    std::cout << "leCar : " << leCar << '\n';
-    std::cout << "laForme : " << laForme << '\n';
+    std::cout << decoderForme(laForme) << '\n';
   }
 }
 
