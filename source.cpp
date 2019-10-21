@@ -66,13 +66,18 @@ void lireFichier()
 
     getline(monFichier, leRemplissage);
 
-    std::cout << decoderForme(laForme) << '\n';
 
 
     switch (decoderForme(laForme)) {
       case 0:
         dessinerCarre(laTaille, laDecal, leCar, leRemplissage);
       break;
+
+      case 1:
+
+      break;
+      default :
+      std::cout << "ERROR ! \n forome non pris en charge" << '\n';
     }
   }
 }
@@ -80,6 +85,6 @@ void lireFichier()
 int main()
 {
   lireFichier();
-  std::cout << "Hello Word !!!" << '\n';
+  std::cout << "fin de Programme" << '\n';
   return 0;
 }
