@@ -98,6 +98,11 @@ void dessinerTriangleRectangleInv(int uneTaille, int unEspace, char unCar, std::
   }
 }
 
+void dessinerTriangle(/* arguments */) {
+  /* code */
+}
+
+
 int decoderForme(std::string uneForme)
 {
   std::string lesFormePossible[5]={"carre","triangle rectangle","triangle rectangle inverse","triangle","losange"};
