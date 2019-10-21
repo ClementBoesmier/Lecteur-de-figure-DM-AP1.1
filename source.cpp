@@ -2,9 +2,26 @@
 #include <fstream>
 #include <string>
 
-void dessinerCarre()
+void dessinerCarre(int uneTaille, int unEspace, char unCar, std::string unRempl)
 {
+  if (unRempl == "fill") {
+    for (size_t leI = 0; leI < uneTaille; leI++)
+    {
+      for (size_t leJ = 0; leJ < unEspace; leJ++)
+      {
+        std::cout << " ";
+      }
+      for (size_t leJ = 0; leJ < uneTaille; leJ++)
+      {
+        std::cout << unCar;
+      }
+      std::cout << '\n';
+    }
+  }
+  else
+  {
 
+  }
 }
 
 int decoderForme(std::string uneForme)
@@ -42,6 +59,13 @@ void lireFichier()
     getline(monFichier, leRemplissage);
 
     std::cout << decoderForme(laForme) << '\n';
+
+
+    switch (decoderForme(laForme)) {
+      case 0:
+        dessinerCarre(laTaille, laDecal, leCar, leRemplissage);
+      break;
+    }
   }
 }
 
