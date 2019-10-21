@@ -32,6 +32,11 @@ void dessinerCarre(int uneTaille, int unEspace, char unCar, std::string unRempl)
   }
 }
 
+void dessinerTriangleRectangle(int uneTaille, int unEspace, char unCar, std::string unRempl)
+{
+  
+}
+
 int decoderForme(std::string uneForme)
 {
   std::string lesFormePossible[5]={"carre","triangle rectangle","triangle rectangle inverse","triangle","losange"};
@@ -74,10 +79,11 @@ void lireFichier()
       break;
 
       case 1:
-
+        dessinerTriangleRectangle(laTaille, laDecal, leCar, leRemplissage)
       break;
+
       default :
-      std::cout << "ERROR ! \n forome non pris en charge" << '\n';
+      std::cout << "ERROR ! \n forme non pris en charge" << '\n';
     }
   }
 }
