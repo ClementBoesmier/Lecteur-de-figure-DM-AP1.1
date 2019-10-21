@@ -5,7 +5,7 @@ carre
 fill
 carre
 6
-0
+6
 *
 none
 triangle rectangle

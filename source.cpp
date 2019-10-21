@@ -4,23 +4,31 @@
 
 void dessinerCarre(int uneTaille, int unEspace, char unCar, std::string unRempl)
 {
-  if (unRempl == "fill") {
-    for (size_t leI = 0; leI < uneTaille; leI++)
+  for (size_t leI = 0; leI < uneTaille; leI++)
+  {
+    for (size_t leJ = 0; leJ < unEspace; leJ++)
     {
-      for (size_t leJ = 0; leJ < unEspace; leJ++)
-      {
-        std::cout << " ";
-      }
-      for (size_t leJ = 0; leJ < uneTaille; leJ++)
+      std::cout << " ";
+    }
+    for (size_t leJ = 0; leJ < uneTaille; leJ++)
+    {
+      if (unRempl == "fill")
       {
         std::cout << unCar;
       }
-      std::cout << '\n';
+      else
+      {
+        if ((leJ == 0 ) || leJ == (uneTaille - 1) || leI == 0 || leI == (uneTaille -1))
+        {
+          std::cout << unCar;
+        }
+        else
+        {
+          std::cout << " ";
+        }
+      }
     }
-  }
-  else
-  {
-
+    std::cout << '\n';
   }
 }
 
