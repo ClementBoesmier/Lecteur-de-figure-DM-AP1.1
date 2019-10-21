@@ -65,6 +65,39 @@ void dessinerTriangleRectangle(int uneTaille, int unEspace, char unCar, std::str
   }
 }
 
+void dessinerTriangleRectangleInv(int uneTaille, int unEspace, char unCar, std::string unRempl)
+{
+  int leSommai = uneTaille;
+  for (size_t leI = 0; leI < uneTaille; leI++)
+  {
+    for (size_t leJ = 0; leJ < unEspace; leJ++)
+    {
+      std::cout << " ";
+    }
+
+    for (size_t leJ = 0; leJ < leSommai; leJ++)
+    {
+      if (unRempl == "fill")
+      {
+        std::cout << unCar;
+      }
+      else
+      {
+        if (leJ == 0 || leJ == (leSommai - 1) || leI == 0)
+        {
+          std::cout << unCar;
+        }
+        else
+        {
+          std::cout << " ";
+        }
+      }
+    }
+    std::cout <<'\n';
+    leSommai--;
+  }
+}
+
 int decoderForme(std::string uneForme)
 {
   std::string lesFormePossible[5]={"carre","triangle rectangle","triangle rectangle inverse","triangle","losange"};
@@ -108,6 +141,10 @@ void lireFichier()
 
       case 1:
         dessinerTriangleRectangle(laTaille, laDecal, leCar, leRemplissage);
+      break;
+
+      case 2:
+        dessinerTriangleRectangleInv(laTaille, laDecal, leCar, leRemplissage);
       break;
 
       default :
