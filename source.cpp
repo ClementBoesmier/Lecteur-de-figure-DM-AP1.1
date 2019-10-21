@@ -37,12 +37,28 @@ void dessinerTriangleRectangle(int uneTaille, int unEspace, char unCar, std::str
   int leSommai = 1;
   for (size_t leI = 0; leI < uneTaille; leI++)
   {
-    for (size_t leJ = 0; leJ < unEspace; leJ++) {
+    for (size_t leJ = 0; leJ < unEspace; leJ++)
+    {
       std::cout << " ";
     }
+
     for (size_t leJ = 0; leJ < leSommai; leJ++)
     {
-      std::cout << unCar;
+      if (unRempl == "fill")
+      {
+        std::cout << unCar;
+      }
+      else
+      {
+        if (leJ == 0 || leJ == (leSommai - 1) || leI == (uneTaille - 1))
+        {
+          std::cout << unCar;
+        }
+        else
+        {
+          std::cout << " ";
+        }
+      }
     }
     std::cout <<'\n';
     leSommai++;
