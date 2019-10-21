@@ -34,7 +34,19 @@ void dessinerCarre(int uneTaille, int unEspace, char unCar, std::string unRempl)
 
 void dessinerTriangleRectangle(int uneTaille, int unEspace, char unCar, std::string unRempl)
 {
-  
+  int leSommai = 1;
+  for (size_t leI = 0; leI < uneTaille; leI++)
+  {
+    for (size_t leJ = 0; leJ < unEspace; leJ++) {
+      std::cout << " ";
+    }
+    for (size_t leJ = 0; leJ < leSommai; leJ++)
+    {
+      std::cout << unCar;
+    }
+    std::cout <<'\n';
+    leSommai++;
+  }
 }
 
 int decoderForme(std::string uneForme)
@@ -79,7 +91,7 @@ void lireFichier()
       break;
 
       case 1:
-        dessinerTriangleRectangle(laTaille, laDecal, leCar, leRemplissage)
+        dessinerTriangleRectangle(laTaille, laDecal, leCar, leRemplissage);
       break;
 
       default :
