@@ -98,8 +98,9 @@ void dessinerTriangleRectangleInv(int uneTaille, int unEspace, char unCar, std::
   }
 }
 
-void dessinerTriangle(/* arguments */) {
-  /* code */
+void dessinerTriangle(int uneTaille, int unEspace, char unCar, std::string unRempl)
+{
+  int laTailleTriangle = (uneTaille / 2) + (uneTaille % 2);
 }
 
 
@@ -117,7 +118,7 @@ int decoderForme(std::string uneForme)
 }
 
 
-void lireFichier()
+int main()
 {
   std::ifstream monFichier("figure.txt");
   std::string laForme, leRemplissage;
@@ -152,15 +153,13 @@ void lireFichier()
         dessinerTriangleRectangleInv(laTaille, laDecal, leCar, leRemplissage);
       break;
 
+      case 3:
+        dessinerTriangle(laTaille, laDecal, leCar, leRemplissage);
+      break;
+
       default :
       std::cout << "ERROR ! \n forme non pris en charge" << '\n';
     }
   }
-}
-
-int main()
-{
-  lireFichier();
-  std::cout << "fin de Programme" << '\n';
   return 0;
 }
