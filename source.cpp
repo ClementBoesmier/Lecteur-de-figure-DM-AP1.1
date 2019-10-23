@@ -215,10 +215,10 @@ int main()
 
       case 4:
         dessinerTriangleInverse(laTaille, laDecal, leCar, leRemplissage);
-      //break;
+      break;
 
-      //default :
-      /*std::cout << "ERROR ! \n forme non pris en charge" << '\n';*/
+      default :
+      std::cout << "ERROR ! \n forme non pris en charge" << '\n';
     }
   }
   return 0;
