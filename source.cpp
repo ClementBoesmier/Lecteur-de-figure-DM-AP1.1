@@ -217,6 +217,10 @@ int main()
         dessinerTriangleInverse(laTaille, laDecal, leCar, leRemplissage);
       break;
 
+      case 5:
+        dessinerLosange(laTaille, laDecal, leCar, leRemplissage);
+      break;
+      
       default :
       std::cout << "ERROR ! \n forme non pris en charge" << '\n';
     }
