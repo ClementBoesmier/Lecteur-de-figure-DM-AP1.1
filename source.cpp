@@ -101,6 +101,29 @@ void dessinerTriangleRectangleInv(int uneTaille, int unEspace, char unCar, std::
 void dessinerTriangle(int uneTaille, int unEspace, char unCar, std::string unRempl)
 {
   int laTailleTriangle = (uneTaille / 2) + (uneTaille % 2);
+  for (size_t leI = 0; leI < laTailleTriangle; leI++) {
+    for (size_t leJ = 0; leJ < (unEspace + leI); leJ++) {
+      std::cout << " ";
+    }
+    for (size_t leJ = 0; leJ < (uneTaille - leI*2) ; leJ++) {
+      if (unRempl == "fill")
+      {
+        std::cout << unCar;
+      }
+      else
+      {
+        if ((leJ == 0 ) || leJ == ((uneTaille - 1) - (leI * 2)) || leI == 0 )
+        {
+          std::cout << unCar;
+        }
+        else
+        {
+          std::cout << " ";
+        }
+      }
+    }
+    std::cout << '\n';
+  }
 }
 
 
