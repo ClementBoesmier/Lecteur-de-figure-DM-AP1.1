@@ -129,7 +129,7 @@ void dessinerTriangle(int uneTaille, int unEspace, char unCar, std::string unRem
 
 int decoderForme(std::string uneForme)
 {
-  std::string lesFormePossible[5]={"carre","triangle rectangle","triangle rectangle inverse","triangle","losange"};
+  std::string lesFormePossible[5]={"carre","triangle rectangle","triangle rectangle inverse","triangle","triangle inverse","losange"};
   for (size_t leI = 0; leI < 5; leI++)
   {
     if (uneForme == lesFormePossible[leI])
