@@ -100,8 +100,7 @@ void dessinerTriangleRectangleInv(int uneTaille, int unEspace, char unCar, std::
 
 void dessinerTriangle(int uneTaille, int unEspace, char unCar, std::string unRempl)
 {
-  int laTailleTriangle = (uneTaille / 2) + (uneTaille % 2);
-  for (int leI = 0; leI < laTailleTriangle; leI++)
+  for (int leI = 0; leI < (uneTaille / 2) + (uneTaille % 2); leI++)
   {
     for (int leJ = 0; leJ < (unEspace + leI); leJ++)
     {
@@ -132,8 +131,7 @@ void dessinerTriangle(int uneTaille, int unEspace, char unCar, std::string unRem
 
 void dessinerTriangleInverse(int uneTaille, int unEspace, char unCar, std::string unRempl)
 {
-  int laTailleTriangle = (uneTaille / 2) + (uneTaille % 2);
-  for (int leI = laTailleTriangle; leI > -1; leI--)
+  for (int leI = (uneTaille / 2) + (uneTaille % 2); leI > -1; leI--)
   {
     for (int leJ = 0; leJ < (unEspace + leI); leJ++)
     {
@@ -161,11 +159,25 @@ void dessinerTriangleInverse(int uneTaille, int unEspace, char unCar, std::strin
   }
 }
 
+void dessinerLosange(int uneTaille, int unEspace, char unCar, std::string unRempl)
+{
+
+  for (size_t leI = 0; leI < (uneTaille/2)+(uneTaille%2); leI++) {
+    for (size_t leJ = 0; leJ < unEspace+leI; leJ++) {
+      std::cout << " ";
+    }
+    for (size_t leJ = 0; leJ < uneTaille-(leI*2); leJ++) {
+      std::cout << unCar;
+    }
+    std::cout << '\n';
+  }
+}
+
 
 int decoderForme(std::string uneForme)
 {
   std::string lesFormePossible[6]={"carre","triangle rectangle","triangle rectangle inverse","triangle","triangle inverse","losange"};
-  for (int leI = 0; leI < 5; leI++)
+  for (int leI = 0; leI < 6; leI++)
   {
     if (uneForme == lesFormePossible[leI])
     {
@@ -220,7 +232,7 @@ int main()
       case 5:
         dessinerLosange(laTaille, laDecal, leCar, leRemplissage);
       break;
-      
+
       default :
       std::cout << "ERROR ! \n forme non pris en charge" << '\n';
     }
