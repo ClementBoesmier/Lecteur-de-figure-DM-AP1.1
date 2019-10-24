@@ -161,15 +161,28 @@ void dessinerTriangleInverse(int uneTaille, int unEspace, char unCar, std::strin
 
 void dessinerLosange(int uneTaille, int unEspace, char unCar, std::string unRempl)
 {
-
-  for (size_t leI = 0; leI < (uneTaille/2)+(uneTaille%2); leI++) {
-    for (size_t leJ = 0; leJ < unEspace+leI; leJ++) {
+  int leTabTest[2] = {uneTaille/2, uneTaille%2};
+  bool leMilieur = false;
+  for (int leI = 0; leI < uneTaille; leI++) {
+    for (int leJ = 0; leJ < unEspace+leTabTest[0]; leJ++) {
       std::cout << " ";
     }
-    for (size_t leJ = 0; leJ < uneTaille-(leI*2); leJ++) {
+    for (int leJ = 0; leJ < leTabTest[1]; leJ++) {
       std::cout << unCar;
     }
     std::cout << '\n';
+    if (leMilieur == false) {
+      leTabTest[0] --;
+      leTabTest[1] += 2;
+    }
+    else
+    {
+      leTabTest[0]++;
+      leTabTest[1] -= 2;
+    }
+    if (leTabTest[0] == 0) {
+      leMilieur = true;
+    }
   }
 }
 
