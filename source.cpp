@@ -66,12 +66,13 @@ void dessinerCarre(int uneTaille, int unEspace, char unCar, std::string unRempl)
 }
 
 // fonction qui dessine un triangle rectangle
+//elle prend les même argument que dessinerCarre
 void dessinerTriangleRectangle(int uneTaille, int unEspace, char unCar, std::string unRempl)
 {
-  int leSommai = 1;
+  int leSommai = 1;//utilisation d'une variable sommaie incrémanter a chaque retour a la ligne
   for (int leI = 0; leI < uneTaille; leI++)
   {
-    dessinerEspace(unEspace);
+    dessinerEspace(unEspace);//finction d'espace
 
     for (int leJ = 0; leJ < leSommai; leJ++)
     {
