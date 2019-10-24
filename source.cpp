@@ -1,46 +1,77 @@
+//Clement Boesmier
+//ce programe en ligne de commande lit un fichier "figure.txt" situer dans la racine du projet
+//il dessine les figure géométrique décrite a l'interieur sous le format :
+/*
+nom de la forme (string)
+taille (entier)
+espace de marge (entier)
+caratère de dessin (charactère)
+remplissage(fill/none)
+*/
+//les formes prise en charge :
+/*
+carre
+triangle
+triangle inverse
+triangle rectangle
+triangle rectangle inverse
+losange
+*/
+
+
 #include <iostream>
 #include <fstream>
 #include <string>
 
+
+//cette petit fonction crée un espace avant la forme
+// elle prend en argument le nombre d'espace a écrire et ne revoie rien
+void dessinerEspace(int unEspace)
+{
+  for (int leJ = 0; leJ < unEspace; leJ++)
+  {
+    std::cout << " ";
+  }
+}
+
+//fonction qui dessine des carrés
+//elle prend en argument la taille du carrés le nombre d'espace le caratère de modélisation du carré
+  //et si il est plein ou non
+//toute les fonction dessiner prenne les même argument
 void dessinerCarre(int uneTaille, int unEspace, char unCar, std::string unRempl)
 {
-  for (int leI = 0; leI < uneTaille; leI++)
+  for (int leI = 0; leI < uneTaille; leI++)//boucle pour la hauteur
   {
-    for (int leJ = 0; leJ < unEspace; leJ++)
-    {
-      std::cout << " ";
-    }
+    dessinerEspace(unEspace);//fonction d'espace
     for (int leJ = 0; leJ < uneTaille; leJ++)
     {
-      if (unRempl == "fill")
+      if (unRempl == "fill")//condition de remplissage
       {
         std::cout << unCar;
       }
       else
       {
         if ((leJ == 0 ) || leJ == (uneTaille - 1) || leI == 0 || leI == (uneTaille -1))
-        {
+        {//condition de remplissage si on touche dessine une extémité
           std::cout << unCar;
         }
         else
-        {
+        {//si non on est forcément a l'interieur
           std::cout << " ";
         }
       }
     }
-    std::cout << '\n';
+    std::cout << '\n';//retour a la ligne
   }
 }
 
+// fonction qui dessine un triangle rectangle
 void dessinerTriangleRectangle(int uneTaille, int unEspace, char unCar, std::string unRempl)
 {
   int leSommai = 1;
   for (int leI = 0; leI < uneTaille; leI++)
   {
-    for (int leJ = 0; leJ < unEspace; leJ++)
-    {
-      std::cout << " ";
-    }
+    dessinerEspace(unEspace);
 
     for (int leJ = 0; leJ < leSommai; leJ++)
     {
