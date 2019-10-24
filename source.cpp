@@ -168,7 +168,15 @@ void dessinerLosange(int uneTaille, int unEspace, char unCar, std::string unRemp
       std::cout << " ";
     }
     for (int leJ = 0; leJ < leTabTest[1]; leJ++) {
-      std::cout << unCar;
+      if (unRempl == "fill") {
+        if (leJ == 0 || leJ == leTabTest[1]-1) {
+          std::cout << unCar;
+        } else {
+          std::cout << " ";
+        }
+      } else {
+        std::cout << unCar;
+      }
     }
     std::cout << '\n';
     if (leMilieur == false) {
