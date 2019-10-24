@@ -69,7 +69,7 @@ void dessinerCarre(int uneTaille, int unEspace, char unCar, std::string unRempl)
 //elle prend les même argument que dessinerCarre
 void dessinerTriangleRectangle(int uneTaille, int unEspace, char unCar, std::string unRempl)
 {
-  int leSommai = 1;//utilisation d'une variable sommaie incrémanter a chaque retour a la ligne
+  int leSommai = 1;//utilisation d'une variable sommete incrémanter a chaque retour a la ligne
   for (int leI = 0; leI < uneTaille; leI++)
   {
     dessinerEspace(unEspace);//finction d'espace
@@ -93,7 +93,7 @@ void dessinerTriangleRectangle(int uneTaille, int unEspace, char unCar, std::str
       }
     }
     std::cout <<'\n';
-    leSommai++;//incrépent du sommaie pour arrivé a la base
+    leSommai++;//incrépent du sommete pour arrivé a la base
   }
 }
 
@@ -101,7 +101,7 @@ void dessinerTriangleRectangle(int uneTaille, int unEspace, char unCar, std::str
 //elle prend les même argument que dessinerCarre
 void dessinerTriangleRectangleInv(int uneTaille, int unEspace, char unCar, std::string unRempl)
 {
-  int leSommai = uneTaille;//variable pour le sommai
+  int leSommai = uneTaille;//variable pour le sommet
   for (int leI = 0; leI < uneTaille; leI++)//boucle de hauteur
   {
     dessinerEspace(unEspace);//fonction d'espace
@@ -124,7 +124,7 @@ void dessinerTriangleRectangleInv(int uneTaille, int unEspace, char unCar, std::
       }
     }
     std::cout <<'\n';//retour a la ligne
-    leSommai--;//décrémentation du sommai
+    leSommai--;//décrémentation du sommet
   }
 }
 
